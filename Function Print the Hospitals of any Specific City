@@ -1,0 +1,28 @@
+// Function to print hospitals in a specific city 
+void printHospitalsInCity(struct Hospital hospitals[]) { 
+	char city[50]; 
+	int hospitalsFound = 0; 
+
+	printf("Enter city name (X, Y or Z): "); 
+	scanf("%s", city); 
+
+	printf("Hospitals in %s:\n", city); 
+
+	for (int i = 0; i < 5; i++) { 
+		// Use strcasecmp for case-insensitive comparison 
+		if (strcasecmp(hospitals[i].city, city) == 0) { 
+			printf("Hospital Name: %s\n", hospitals[i].name); 
+			printf("City: %s\n", hospitals[i].city); 
+			printf("Total Beds: %d\n", hospitals[i].beds); 
+			printf("Price per Bed: $%.2f\n", hospitals[i].price); 
+			printf("Rating: %.1f\n", hospitals[i].rating); 
+			printf("Reviews: %d\n", hospitals[i].reviews); 
+			printf("\n"); 
+			hospitalsFound++; 
+		} 
+	} 
+
+	if (hospitalsFound == 0) { 
+		printf("No hospitals found in %s\n", city); 
+	} 
+} 
