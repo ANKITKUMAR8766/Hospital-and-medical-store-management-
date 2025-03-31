@@ -1,0 +1,6 @@
+// Function to print patient data 
+void printPatient(struct Patient patient) { 
+	printf("Patient Name: %s\n", patient.name); 
+	printf("Age: %d\n", patient.age); 
+	printf("\n"); 
+}
